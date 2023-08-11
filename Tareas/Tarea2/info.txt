@@ -1,0 +1,13 @@
+WORKDIR indica la ruta de la aplicación en el contenedor
+COPY indica copiar ficheros .mod y .sum 
+RUN para instalar ficheros definidos en .mod
+COPY de ficheros con el código de la API
+RUN para ejecutar el script en go
+EXPOSE puerto abierto para el contenedor, ej 8080
+CMD con el flag definido para ejecución del build
+
+DOCKER COMANDOS EN CMD
+docker build --tag=api-go .
+api-go es la etiqueta del contenedor y . es la ruta del fichero docker
+docker run --publish 8080:8080 api-go
+
