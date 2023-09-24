@@ -1,0 +1,23 @@
+.columns {
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    column-count: 2;
+}
+
+canvas {
+    margin: 0 auto;
+    padding-bottom: 2%;
+}
+
+.column1 {
+    border: 2px solid black;
+}
+
+.column2 {
+    border: 2px solid black;
+}
+
+h2{
+    color: black;
+}

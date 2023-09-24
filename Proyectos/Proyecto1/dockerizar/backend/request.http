@@ -1,0 +1,68 @@
+###
+GET http://localhost:9000/api HTTP/1.1
+
+###
+POST http://localhost:9000/api/modules HTTP/1.1
+Content-Type: application/json 
+
+{
+    "nombre_maquina": "Maquina 1",
+    "ip_maquina": "192.168.11.2",
+    "cpu": "25",
+    "ram": "75"
+}
+
+
+###
+POST http://localhost:9000/api/procesess HTTP/1.1
+Content-Type: application/json 
+
+{
+    "procesos": [
+        {"pid": 100,
+        "nombre_p":"p1",
+        "usuario_p":"mar",
+        "estado_p":"0",
+        "ram_p":500,
+        "FK_nombre_maquina":"Maquina 1"},
+        {"pid": 200,
+        "nombre_p":"p2",
+        "usuario_p":"marjoriee",
+        "estado_p":"1",
+        "ram_p":755,
+        "FK_nombre_maquina":"Maquina 1"},
+        {"pid": 300,
+        "nombre_p":"p3",
+        "usuario_p":"riit",
+        "estado_p":"v4",
+        "ram_p":255,
+        "FK_nombre_maquina":"Maquina 1"}
+    ]
+}
+
+###
+POST http://localhost:9000/api/machine HTTP/1.1
+Content-Type: application/json 
+
+{
+    "choices": "Maquina 7"
+}
+
+###
+POST http://localhost:9000/api/process HTTP/1.1
+Content-Type: application/json 
+
+{
+    "choices": "Maquina 1"
+}
+
+###
+DELETE http://localhost:9000/api/3 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/1 HTTP/1.1
+Content-Type: application/json 
+
+{
+    "name_machine": "Maquina 3"
+}

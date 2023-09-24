@@ -1,0 +1,21 @@
+#list-button {
+    padding-top: 3%;
+    padding-bottom: 20px;
+}
+
+#choices {
+    background-color: white;
+    font-weight: 100;
+    font-size: 1.2em;
+    height: 40px;
+}
+
+.button-select {
+    padding: 10px 10px 10px 10px;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 8px;
+    background-color: #333;
+    height: 45px;
+}

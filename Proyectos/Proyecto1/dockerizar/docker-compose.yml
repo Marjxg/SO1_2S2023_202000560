@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  mysqldb:
+    build: ./database
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=so1db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - mysqlvol:/var/lib/mysql
+  backend:
+    depends_on:
+      - mysqldb
+    build: ./backend
+    links:
+      - mysqldb
+    ports:
+      - 9000:9000
+    restart: always
+  frontend:
+    depends_on:
+      - backend
+    build: ./frontend
+    links:
+      - backend
+    ports:
+      - 3000:3000
+volumes:
+  mysqlvol:

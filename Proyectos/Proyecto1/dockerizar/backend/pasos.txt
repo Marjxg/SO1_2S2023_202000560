@@ -1,0 +1,17 @@
+//Crear servidor
+npm init -y
+crear file server.js
+npm install express
+importar express, instanciarlo, setear el puerto y crear listen
+correr el servidor con node server.js
+
+//Para que el servidor se recargue cuando se hace un cambio
+npm install nodemon --save-dev
+en el package.json, en script colocar "start":"nodemon server.js" y en main "server.js"
+a partir de ahora correr con npm run start
+
+//Para manejar base de datos MYSQL
+npm i mysql express-myconnection
+
+
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
