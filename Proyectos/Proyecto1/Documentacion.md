@@ -189,6 +189,22 @@ sudo apt autoremove && sudo apt autoclean
 sudo apt install linux-headers-generic
 sudo apt install linux-headers-5.15.0-1042-gcp
 ```
+# Golang
+### Creación
+El agente en GO es el encargado de la recolección de la información de las máquinas proveida por los módulos RAM y CPU.
+* http.HandleFunc("/send_data", func(w http.ResponseWriter, r *http.Request) Se conecta con la plataforma de monitoreo, específicamente con Node JS para el intercambio de información
+* http.HandleFunc("/get_pid", func(w http.ResponseWriter, r *http.Request) Se conecta con la plataforma de monitoreo, específicamente con React para el servicio de Kill.
+```
+### Dockerfile
+FROM golang
+WORKDIR /app
+COPY go.mod ./
+RUN go mod download
+COPY *go ./
+RUN go build -o /api
+EXPOSE 8080
+CMD [ "/api" ]
+```
 
 # Google Cloud Platform
 * Se creó una VM para el recolector de datos, donde se realizó el docker compose de las imágenes de docker hub
