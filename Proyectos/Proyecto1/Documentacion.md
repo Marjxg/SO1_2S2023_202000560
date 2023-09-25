@@ -191,3 +191,19 @@ sudo apt install linux-headers-5.15.0-1042-gcp
 ```
 
 # Google Cloud Platform
+* Se creó una VM para el recolector de datos, donde se realizó el docker compose de las imágenes de docker hub
+* Se creó una VM para la creación de los módulos RAM y CPU así como de la API en Go.
+![image](https://github.com/Marjxg/SO1_2S2023_202000560/assets/78390305/05ec4245-6f31-47a2-b255-28cc04cf0c58)
+
+* Se creó una imagen de VM para colocarla como plantilla
+![image](https://github.com/Marjxg/SO1_2S2023_202000560/assets/78390305/78cc9b38-89a9-4645-88fc-5eacc754fefb)
+
+* Para el auto-scalling se creó una plantilla de instancias
+![image](https://github.com/Marjxg/SO1_2S2023_202000560/assets/78390305/9d3be599-ee69-4266-925f-c5f3958e3afa)
+
+### Stress
+```
+sudo apt-get install -y stress
+sudo stress --cpu 2 --timeout 60s
+```
+
