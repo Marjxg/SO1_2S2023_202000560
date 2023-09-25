@@ -40,6 +40,8 @@ COPY ./db-script.sql /docker-entrypoint-initdb.d/
 ```
 
 # Node JS - Backend
+
+
 # React - Frontend
 ## Vista principal
 ![image](https://github.com/Marjxg/SO1_2S2023_202000560/assets/78390305/f7dcf118-82c4-4275-8603-8ecdbaf645fc)
@@ -47,14 +49,58 @@ COPY ./db-script.sql /docker-entrypoint-initdb.d/
 ## Vista funcional
 ![image](https://github.com/Marjxg/SO1_2S2023_202000560/assets/78390305/d0b4cfcc-a755-459e-979d-cb9894673fe6)
 
-### Componentes
-* Encabezado de página
-* ListButton que contiene el select para listar las máquinas existentes y un botón para seleccionarla
-* Graph para mostrar las gráficas por medio de la librería Chart JS
-* InsertButton que contiene el Insert para ingresar el PID y un botón para seleccionarlo
-* TableList para listar en una tabla los procesos de la máquina
+## Creación
+```
+npx create-react-app my-app //Crear react app
+```
+### Componentes utilizados
+* Reader -> Encabezado de página
+* ListButton -> que contiene el select para listar las máquinas existentes y un botón para seleccionarla
+* Graphs -> para mostrar las gráficas por medio de la librería Chart JS
+* InsertButton -> contiene el Insert para ingresar el PID y un botón para seleccionarlo
+* PIDtable-> para listar en una tabla los procesos de la máquina
 
-## Funciones
+### Variables de estado
+* machine -> almacena todas las máquinas recolectadas
+* data -> almacena porcentajes de uso de una sola máquina
+* procesos -> almacena los procesos de una sola máquina
+
+### Sincronización de componentes
+Se utilizó el hook useEffect de react para sincronizar el componente Select con los nombres de las máquinas que provee el servidor.
+
+### Gráficas
+Se utilizó la librería Chart JS para la elaboración de gráficas.
+```
+yarn add chart.js react-chartjs-2
+```
+
+### Handle Machine Submit
+Se utiliza para manejar el fetch hacia la API encargada de validar el nombre de la máquina y retornar información sobre ella.
+Se utiliza el método POST y el nombre de la máquina en formato JSON como cuerpo.
+
+### Handle Input Change
+Captura el evento del cambio en el componente. Es decir, captura lo que se ingresa o se elimina del componente input en el que se ingresa un PID.
+
+### Handle Submit 
+Se utiliza para manejar el fetch hacia la API encargada de buscar el proceso con dicho PID. 
+Se utiliza el método POST y el PID del proceso ingresado por el usuario en formato JSON como cuerpo.
+
+### Correr la app
+```
+npm start
+```
+## Dockerfile
+Se utilizó un dockerfile para crear la imagen del frontend en React para luego utilizar esta imagen como servicio dentro de docker-compose
+```
+FROM node:20.6.0
+WORKDIR /app
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
+```
 
   
 # Docker Compose
