@@ -40,7 +40,46 @@ COPY ./db-script.sql /docker-entrypoint-initdb.d/
 ```
 
 # Node JS - Backend
-
+## Creación
+Crear un proyecto npm e instalar la librería express
+```
+npm init -y
+npm install express
+```
+Para manejar cambios sin tener que reiniciar el servidor se utilizó nodemon
+```
+npm install nodemon --save-dev
+```
+Dentro de script, en package.json agregar lo siguiente:
+```
+"start":"nodemon server.js"
+"main":"server.js"
+```
+Comando para correr
+```
+npm run start
+```
+Para la conexión con la base de datos
+```
+npm i mysql express-myconnection
+```
+En el archivo server.js se estableció el puerto 9000, la conexión con la base de datos, un acceso libre de intercambio de recursos de origen cruzado CORS y una ruta principal para comprobar el correcto funcionamiento del servidor.
+En el archivo routes.js se establecieron las siguientes rutas:
+* http://backend/api/:9000: Realiza SELECT QUERY de las máquinas existentes en la base de datos
+* http://backend/api/modules:9000: Realizar un INSERT QUERY con información de las máquinas
+* http://backend/api/procesess:9000: Realizar un INSERT QUERY con información de los procesos
+* http://backend/api/machine:9000: Realizar un SELECT QUERY para obtener información de porcentajes
+* http://backend/api/process:9000:  Realizar un SELECT QUERY para obtener información de procesos
+## Dockerfile
+Se utilizó un dockerfile para crear la imagen del backend en Node JS para luego utilizar esta imagen como servicio dentro de docker-compose
+```
+FROM node:18
+WORKDIR /myapp
+COPY package.json .
+RUN npm install
+COPY . .
+CMD ["npm", "run", "start"]
+```
 
 # React - Frontend
 ## Vista principal
