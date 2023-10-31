@@ -7,7 +7,7 @@ import Container from './components/Container';
 import io from "socket.io-client"
 import Selector from './components/Selector';
 
-const socketio = io('http://localhost:9000');
+const socketio = io('http://34.160.168.57/');
 
 function App() {
   
