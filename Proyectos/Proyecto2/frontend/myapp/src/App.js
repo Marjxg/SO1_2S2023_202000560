@@ -48,7 +48,7 @@ function App() {
       }
   
       try {
-        const response = await fetch('http://localhost:9000/api/getData', requestInit);
+        const response = await fetch('http://34.160.168.57/api/getData', requestInit);
   
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -68,7 +68,7 @@ function App() {
       }
   
       try {
-        const response = await fetch('http://localhost:9000/api/getCourses', requestInit);
+        const response = await fetch('http://34.160.168.57/api/getCourses', requestInit);
   
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -88,7 +88,7 @@ function App() {
       }
   
       try {
-        const response = await fetch('http://localhost:9000/api/getYears', requestInit);
+        const response = await fetch('http://34.160.168.57/api/getYears', requestInit);
   
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -108,7 +108,7 @@ function App() {
       }
   
       try {
-        const response = await fetch('http://localhost:9000/api/getSemesters', requestInit);
+        const response = await fetch('http://34.160.168.57/api/getSemesters', requestInit);
   
         if (!response.ok) {
           throw new Error('Network response was not ok');

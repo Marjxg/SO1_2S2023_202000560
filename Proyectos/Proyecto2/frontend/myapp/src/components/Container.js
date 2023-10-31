@@ -20,7 +20,7 @@ function Container(props) {
             body: JSON.stringify(value)
         }
 
-        fetch('http://localhost:9000/api/approved', requestInit)
+        fetch('http://34.160.168.57/api/approved', requestInit)
             .then(res => res.json())
             .then(res => props.SetApproved(res))
     }
@@ -41,7 +41,7 @@ function Container(props) {
             body: JSON.stringify(value)
         }
 
-        fetch('http://localhost:9000/api/average', requestInit)
+        fetch('http://34.160.168.57/api/average', requestInit)
             .then(res => res.json())
             .then(res => props.SetAverage(res))
     }
@@ -62,7 +62,7 @@ function Container(props) {
             body: JSON.stringify(value)
         }
 
-        fetch('http://localhost:9000/api/mostStudents', requestInit)
+        fetch('http://34.160.168.57/api/mostStudents', requestInit)
             .then(res => res.json())
             .then(res => props.SetMostStudents(res))
     }
