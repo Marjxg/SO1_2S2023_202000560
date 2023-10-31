@@ -1,0 +1,41 @@
+.cols {
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+}
+
+
+canvas {
+    margin: 0 auto;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+
+.col1{
+    border: 0px;
+    flex: 1;
+}
+
+.col2 {
+    flex: 1;
+}
+
+
+#course, #year, #semester {
+    background-color: white;
+    font-weight: 100;
+    font-size: 1em;
+    height: 40px;
+}
+
+.button-submit {
+    padding: 10px 10px 10px 10px;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 8px;
+    background-color: #333;
+    height: 45px;
+}

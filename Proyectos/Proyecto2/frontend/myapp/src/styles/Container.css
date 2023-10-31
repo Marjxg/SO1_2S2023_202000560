@@ -1,0 +1,32 @@
+.columns {
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    column-count: 3;
+    display: flex;
+}
+
+canvas {
+    margin: 0 auto;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+.column1, .column2, .column3 {
+    border: 0.1em solid black;
+    flex: 1;
+}
+
+h2{
+    color: black;
+}
+
+.button-submit {
+    padding: 10px 10px 10px 10px;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 8px;
+    background-color: #333;
+    height: 45px;
+}
