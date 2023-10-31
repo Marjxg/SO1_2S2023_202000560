@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:               #Información
+  name: deploy-nodejs   #Nombre del despliegue
+  namespace: so1p2
+  labels: 
+    app: node-app       #Etiqueta del despliegue
+spec:                   #Especificaciones
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app     #Etiqueta ante otros objetos
+  template:
+    metadata:
+      labels:
+        app: node-app   #Etiqueta del contenedor
+    spec:
+      containers:
+      - name: node-app  #Nombre del contenedor
+        image: marjxg/nodejs-server-v2
+        ports:
+        - containerPort: 9000
+
+# kubectl apply -f nodejs.yaml

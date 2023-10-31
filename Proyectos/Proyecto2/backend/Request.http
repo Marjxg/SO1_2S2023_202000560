@@ -1,0 +1,54 @@
+
+###
+POST http://34.160.168.57/api/setData HTTP/1.1
+Content-Type: application/json 
+
+{ "scores" : 
+    [
+    {"carne":692444692,"nombre":"Gaylord Laxon","curso":"SA","nota":61,"semestre":"2S","year":2006},
+    {"carne":692444693,"nombre":"Gaylord Laxon","curso":"SA","nota":60,"semestre":"2S","year":2006},
+    {"carne":692444694,"nombre":"Gaylord Laxon","curso":"SA","nota":30,"semestre":"2S","year":2006}
+    ]
+}
+
+###
+GET http://34.160.168.57/api/getData
+
+###
+GET http://34.160.168.57/api/getCourses
+
+###
+GET http://34.160.168.57/api/getYears
+
+###
+GET http://34.160.168.57/api/getSemesters
+
+
+###
+POST http://34.160.168.57/api/average HTTP/1.1
+Content-Type: application/json 
+
+{
+    "year" : 2006,
+    "semester" : "2S"
+}
+
+
+###
+POST http://34.160.168.57/api/mostStudents HTTP/1.1
+Content-Type: application/json 
+
+{
+    "year" : 2006,
+    "semester" : "2S"
+}
+
+###
+POST http://34.160.168.57/api/approved HTTP/1.1
+Content-Type: application/json 
+
+{
+    "year" : 2006,
+    "semester" : "2S",
+    "course" : "SA"
+}
